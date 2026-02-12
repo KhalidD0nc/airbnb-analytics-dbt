@@ -1,4 +1,4 @@
-aws_dbt_snowflake:
+airbnb_dbt:
   outputs:
     dev:
       account: DVXIDXD-VA08152

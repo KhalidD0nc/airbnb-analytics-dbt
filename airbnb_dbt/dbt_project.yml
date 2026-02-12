@@ -1,10 +1,10 @@
 
 
-name: 'aws_dbt_snowflake'
+name: 'airbnb_dbt'
 version: '1.0.0'
 
 
-profile: 'aws_dbt_snowflake'
+profile: 'airbnb_dbt'
 
 
 model-paths: ["models"]
@@ -24,7 +24,7 @@ clean-targets:
 
 
 models:
-  aws_dbt_snowflake:
+  airbnb_dbt:
     
     bronze:
       +materialized: incremental

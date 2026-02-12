@@ -53,7 +53,7 @@ The project is organized as follows:
 1. **Clone the repository:**
    ```bash
    git clone <repository_url>
-   cd aws_dbt_snowflake
+   cd airbnb_dbt
    ```
 
 2. **Install dbt dependencies:**
@@ -62,11 +62,11 @@ The project is organized as follows:
    ```
 
 3. **Configure your `profiles.yml`:**
-   Ensure your `~/.dbt/profiles.yml` (or local `profiles.yml`) is configured for the `aws_dbt_snowflake` profile.
+   Ensure your `~/.dbt/profiles.yml` (or local `profiles.yml`) is configured for the `airbnb_dbt` profile.
 
    Example:
    ```yaml
-   aws_dbt_snowflake:
+   airbnb_dbt:
      target: dev
      outputs:
        dev:
