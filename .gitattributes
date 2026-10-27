@@ -1,0 +1,2 @@
+# Include the project's SQL/Jinja transformation sources in GitHub language statistics.
+*.sql linguist-language=SQL linguist-detectable
