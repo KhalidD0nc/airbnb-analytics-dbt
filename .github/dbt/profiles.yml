@@ -1,0 +1,13 @@
+# Offline parsing only. These placeholders cannot authenticate to Snowflake.
+airbnb_dbt:
+  target: ci
+  outputs:
+    ci:
+      type: snowflake
+      account: offline-placeholder
+      user: offline-placeholder
+      password: not-a-credential
+      database: AIRBNB
+      warehouse: OFFLINE
+      schema: DBT_WORK
+      threads: 1

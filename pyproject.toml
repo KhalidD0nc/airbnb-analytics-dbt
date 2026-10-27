@@ -1,7 +1,7 @@
 [project]
-name = "aws-dbt-snowflake"
+name = "airbnb-analytics-dbt"
 version = "0.1.0"
-description = "Add your description here"
+description = "Layered Airbnb analytics models and timestamp snapshots using dbt and Snowflake"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
