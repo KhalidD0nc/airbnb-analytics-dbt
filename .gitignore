@@ -8,3 +8,18 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Local connection configuration and private keys
+.env
+.env.*
+!.env.example
+airbnb_dbt/profiles.yml
+*.pem
+*.p8
+
+# Generated dbt artifacts
+logs/
+target/
+dbt_packages/
+.pytest_cache/
+.DS_Store
