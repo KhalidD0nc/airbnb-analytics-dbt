@@ -48,7 +48,7 @@ wheels = [
 ]
 
 [[package]]
-name = "aws-dbt-snowflake"
+name = "airbnb-analytics-dbt"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [

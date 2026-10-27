@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main, development, staging]
+  push:
+    branches: [main, development, staging]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  dbt-parse:
+    name: Locked Dependencies and dbt Parse
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      DBT_SEND_ANONYMOUS_USAGE_STATS: "false"
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Install the project uv version
+        run: python -m pip install uv==0.11.8
+      - name: Install locked dependencies
+        run: uv sync --locked
+      - name: Parse the dbt project without a warehouse connection
+        run: uv run --frozen dbt parse --project-dir airbnb_dbt --profiles-dir .github/dbt --no-partial-parse
